@@ -1,4 +1,7 @@
-/** Enemies our player must avoid. */
+/**
+ * @constructor Enemy
+ * @classdesc Creates a new Enemy that our player must avoid.
+ */
 var Enemy = function(x, y, speed) {
   /**
    * Set the enemys' initial x (horizontal) value.
@@ -28,18 +31,20 @@ var Enemy = function(x, y, speed) {
   /**
    * The sprite image used for our enemies.
    * @prop {string} sprite - Image loaded via the `sprite` helper method.
-  */
+   */
   this.sprite = 'images/enemy-bug.png';
 };
 
 /**
-* Update the enemy's position, required method for game
-* @param {int} dt a time delta between game ticks.
+@method Enemy.prototype.update
+@desc Update the enemy's position, required method for game.
 */
 Enemy.prototype.update = function(dt) {
-  // multiply any movement by the dt parameter
-  // which will ensure the game runs at the same speed for
-  // all computers.
+  /**
+   * Multiply any movement by the time delta (dt) parameter which will ensure the game
+   * runs at the same speed for all computers.
+   * @param {int} dt - the time delta.
+   */
   this.x += this.speed * dt;
 };
 
@@ -48,9 +53,10 @@ Enemy.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
+// Reset the enemy upon collision or travelling off the canvas.
+Enemy.prototype.reset = function() {
+  this.x = this.init;
+}
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -58,6 +64,9 @@ Enemy.prototype.render = function() {
 
 // NOTE: use checkCollisions
 
+// var allEnemies = [];
+
+// var player = new Player();
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
