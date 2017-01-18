@@ -1,6 +1,43 @@
-frontend-nanodegree-arcade-game
-===============================
+# Classic Arcade Game Clone
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Installing
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+Start by cloning the repository. Either manually by downloading a `.zip` above, or executing the following command,
+
+```
+$ git clone https://github.com/jordanbrauer/classic-arcade-game-clone.git frogger_clone
+```
+
+## Playing
+
+To play the game, open the `index.html` file in your browser.
+
+__Mac OS/Windows:__<br>
+```
+$ cd frogger_clone && open index.html
+```
+
+__Linux:__<br>
+```
+$ cd frogger_clone && xdg-open index.html
+```
+
+### Controls
+
+Here are the controls for the game. Still very rudimentary.
+
+| Key | Effect |
+| :-- | :----- |
+| `Left Arrow` | Move the player left. |
+| `Up Arrow` | Move the player up. |
+| `Right Arrow` | Move the player right. |
+| `Down Arrow` | Move the player down. |
+| `Ctrl`/`Cmd` + `R` | Restart the game. Alternatively, click the "Refresh" button in your browser. |
+
+## Contributing
+
+1. __Fork__ and __clone__ the repository.
+2. Create a new __branch__ and __commit__ changes.
+4. Make __pull request__.
+5. ???
+6. __Profit!!!__
