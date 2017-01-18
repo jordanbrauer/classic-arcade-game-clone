@@ -200,9 +200,6 @@ Player.prototype.handleInput = function (e) {
     case 40:
       this.move('down');
       break;
-
-    /** Prevent any double actions (e.g., scrolling page with arrow keys) through the preventDefault(); event method. */
-    event.preventDefault();
   }
 
   /** Fire the checkForFinishLine() method to determine if we've landed on a finish line. */
@@ -315,6 +312,16 @@ var allEnemies = [
 document.addEventListener('keyup', function(e) {
   player.handleInput(player.controls[e.keyCode]);
 });
+
+/** Prevent any double actions (e.g., scrolling page with arrow keys) through the preventDefault(); event method. */
+window.addEventListener('keydown', function(e) {
+  var playerControls = Object.keys(player.controls);
+
+  if (playerControls.indexOf(`${e.keyCode}`) > -1) {
+    e.preventDefault();
+    return false;
+  }
+}, false);
 
 //-----------------------------------------------
 // Helper Functions
